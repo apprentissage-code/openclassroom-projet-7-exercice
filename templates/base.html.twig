@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Véhicloc{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="{{ path('app_home') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="Vehicloc" /></a>
+        <a href="#" class="btn-nav">Ajouter une voiture</a>
+    </nav>
+    {% block header %}{% endblock %}
+</header>
+
+{% block body %}{% endblock %}
+
+<footer>
+    <h2>Conduire avec nous</h2>
+    <nav>
+        <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li>
+                <a href="#"><img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" /></a>
+                <a href="#"><img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" /></a>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#">Données personnelles</a></li>
+            <li><a href="#">Questions fréquentes</a></li>
+            <li class="copyright">© Véhicloc 2023</li>
+        </ul>
+    </nav>
+</footer>
+
+</body>
+</html>
