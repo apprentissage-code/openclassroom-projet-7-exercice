@@ -24,12 +24,8 @@ final class CarController extends AbstractController
   }
 
   #[Route('/car/{id}', name: 'app_car_show', requirements: ['id' => '\d+'], methods: ['GET'])]
-  public function show(?Car $car): Response
+  public function show(Car $car): Response
   {
-    if (!$car) {
-      return $this->redirectToRoute('app_home');
-    }
-
     return $this->render('car/car.html.twig', [
       'car' => $car,
     ]);
@@ -38,10 +34,6 @@ final class CarController extends AbstractController
   #[Route('/car/{id}/remove', name: 'app_car_remove', requirements: ['id' => '\d+'])]
   public function remove(Car $car, EntityManagerInterface $entityManager): Response
   {
-    if (!$car) {
-      return $this->redirectToRoute('app_home');
-    }
-
     $entityManager->remove($car);
     $entityManager->flush();
     return $this->redirectToRoute('app_home');
